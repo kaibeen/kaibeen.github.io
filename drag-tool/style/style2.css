@@ -1,0 +1,1324 @@
+/*通用*/
+body{
+    font-size: 14px;
+}
+input{
+    outline: none;
+    border:none;
+    padding:0;
+}
+button.primary-btn {
+    height: 36px;
+    line-height: 36px;
+    background-color: #44a959;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+button.outer-btn {
+    height: 36px;
+    line-height: 34px;
+    background-color: #fff;
+    border: 1px solid #44a959;
+    color: #44a959;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*tab*/
+.right-tab {
+    overflow: hidden;
+}
+
+.right-tab-item, .right-tab-main-item {
+    min-width: 48px;
+    box-sizing: border-box;
+    height: 35px;
+    padding: 0 29px 0 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    box-shadow: inset 0 -2px 2px 0 rgba(231, 231, 231, 0.24);
+    border-radius: 4px 4px 0 0;
+    float: left;
+    margin-right: 4px;
+    color: #666666;
+    position: relative;
+    background: #ffffff;
+}
+
+.right-tab-item .tab-close {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    height: 10px;
+    width: 10px;
+    background: url("../images/tab_close.png") center/10px no-repeat;
+    cursor: pointer;
+}
+
+.right-tab-item .tab-close:hover {
+    background-image: url("../images/tab_closed.png");
+}
+
+.right-tab-main-item {
+    padding-right: 10px;
+    background: #ffffff;
+}
+
+.right-tab-item.active, .right-tab-main-item.active {
+    color: #44a959;
+    box-shadow: unset;
+}
+
+.right-container {
+    margin-left: 230px;
+}
+
+.right-cont {
+    height: 699px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 0 4px 4px 4px;
+}
+
+/*个人中心-菜单*/
+.position-box {
+    position: relative;
+}
+
+.menu-center {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    width: 210px;
+    height: 734px;
+}
+
+.menu-center-drawer {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    width: 20px;
+    height: 734px;
+}
+
+.menu-collapse-bar {
+    position: absolute;
+    background: url("../images/sqdh.png") center/8px 18px no-repeat;
+    top: 22px;
+    right: 0;
+    width: 8px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.menu-collapse-bar.menu-expand-bar {
+    right: -8px;
+    background-image: url("../images/zkdh.png");
+}
+
+.menu-title {
+    padding: 21px 0 21px 31px;
+    margin-bottom: 17px;
+    margin-left: 20px;
+    background: url("../images/dh_grzx.png") left center/22px no-repeat;
+    color: #44a959;
+    font-size: 22px;
+    line-height: 100%;
+    font-weight: bold;
+}
+
+.menu-title.teach-manage {
+    background-image: url("../images/dh_jxgl.png");
+}
+
+.menu-list li {
+    font-size: 14px;
+    color: #333333;
+    line-height: 100%;
+    margin-bottom: 19px;
+}
+
+.menu-list li.active a {
+    color: #44a959;
+}
+
+.menu-list li a {
+    cursor: pointer;
+}
+
+.menu-item-title {
+    font-size: 16px;
+    color: #999999;
+    background: left center/16px no-repeat;
+    line-height: 100%;
+    padding-left: 24px;
+    padding-bottom: 1px;
+    margin-bottom: 18px;
+}
+
+.account-set .menu-item-title {
+    background-image: url("../images/dh_zhsz.png");
+}
+
+.normal-set .menu-item-title {
+    background-image: url("../images/dh_zhsz.png");
+}
+
+.mobile-school .menu-item-title {
+    background-image: url("../images/dh_ydxy.png");
+}
+
+.account-set {
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 20px;
+}
+
+/*教学管理菜单*/
+.expand-list-title {
+    margin-bottom: 19px;
+    line-height: 100%;
+    cursor: pointer;
+    margin-right: 20px;
+    background: url("../images/dh_xl2.png") right center/6px 9px no-repeat;
+}
+
+.expand-list-title.expand {
+    background: url("../images/dh_xl.png") right center/10px 7px no-repeat;
+}
+
+.expand-list {
+    padding-left: 17px;
+}
+
+.expand-list div {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.expand-list div a {
+    color: #999999;
+}
+
+.expand-list div:hover a, .expand-list div.active a {
+    color: #44a959;
+}
+
+/*开通账户*/
+
+.top-mobile {
+    padding: 61px 0 50px;
+    text-align: center;
+}
+
+.top-mobile img {
+    display: block;
+    margin: 0 auto;
+}
+
+.top-mobile div {
+    color: #666666;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.sub-card-panel {
+    padding: 0 10px;
+}
+
+.sub-card-box {
+    padding: 0 10px;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.sub-card-title {
+    height: 40px;
+    line-height: 39px;
+    box-sizing: border-box;
+    border: solid 1px #eaeaea;
+    color: #333333;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 24px;
+    background: #ffffff url("../images/c_line.png") no-repeat 10px center;
+    border-radius: 4px 4px 0 0;
+}
+
+.sub-card-content {
+    padding: 21px 20px;
+    border: solid 1px #eaeaea;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.sub-card-label {
+    color: #999999;
+    font-size: 14px;
+}
+
+.img-box {
+    margin-top: 29px;
+    text-align: center;
+}
+
+.img-box img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.img-box div {
+    color: #999999;
+    height: 14px;
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+.btn-box {
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+/*头像管理*/
+.primary-title {
+    background: url("../images/c_line.png") no-repeat left center;
+    padding-left: 10px;
+    height: 40px;
+    line-height: 39px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.primary-title b {
+    font-size: 18px;
+    color: #333333;
+}
+
+.primary-title span {
+    font-size: 14px;
+    color: #999999;
+}
+
+.primary-content {
+    padding: 20px;
+    overflow: auto;
+}
+
+.primary-box .primary-content {
+    padding: 21px 10px;
+}
+
+.primary-content .img-box {
+    float: left;
+    padding: 50px 10px 0;
+    margin-top: 0;
+}
+
+.primary-content .img-box div {
+    height: auto;
+    font-size: 14px;
+    margin-top: 16px;
+    color: #666666;
+}
+
+.primary-content .big-img-box {
+    padding-top: 0;
+}
+
+.primary-content .img-box img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.primary-content .big-img-box img {
+    width: 200px;
+    height: 200px;
+    padding-top: 0;
+}
+
+/*绑定微信*/
+.primary-label {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 34px;
+}
+
+.code-box {
+    margin-left: 105px;
+}
+
+.code-box img {
+    display: block;
+    width: 225px;
+    height: 225px;
+    margin-bottom: 57px;
+}
+
+.btn-group {
+    width: 225px;
+    overflow: hidden;
+}
+
+.left-btn-box {
+    float: left;
+}
+
+.right-btn-box {
+    float: right;
+}
+
+/*修改密码*/
+.form-box{
+    padding-top:20px;
+}
+.form-item {
+    min-height: 51px;
+    overflow: hidden;
+}
+
+.form-label {
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    width: 85px;
+}
+
+.form-input {
+    float: left;
+    width: 450px;
+    height: 36px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+.form-input input {
+    outline: none;
+    width: 100%;
+}
+
+.form-btn-box {
+    margin-left: 85px;
+    padding-top: 12px;
+}
+
+/*资料*/
+.info-avatar {
+    float: left;
+}
+
+.primary-content {
+    overflow: hidden;
+}
+
+.info-avatar-content {
+    width: 80px;
+    height: 80px;
+    background-color: #f7f7f7;
+    float: left;
+    margin: 15px 50px 0 0;
+}
+
+.info-avatar-content img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.info-avatar-content-btn {
+    width: 66px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #44a959;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+.info-box {
+    float: left;
+}
+
+.info-line {
+    overflow: hidden;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.info-line.last {
+    margin-bottom: 10px;
+}
+
+.info-item {
+    float: left;
+}
+
+.info-label {
+    float: left;
+    width: 97px;
+    color: #333333;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+}
+
+.info-cont {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    width: 259px;
+    color: #666666;
+}
+
+.info-btn {
+    width: 40px;
+    height: 24px;
+    line-height: 22px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #44a959;
+    color: #44a959;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+/*学籍卡信息*/
+.roll-box {
+    position: relative;
+}
+
+.card-menu-list {
+    position: absolute;
+    width: 178px;
+    border-right: 1px solid #eaeaea;
+    height: 100%;
+}
+
+.card-menu-list {
+    padding: 20px 0 0 24px;
+}
+
+.card-menu-title {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 100%;
+    width: 140px;
+    background: url("../images/dh_xl.png") right center/12px 8px no-repeat;
+}
+
+.menu-item ul li {
+    color: #666666;
+    margin-bottom: 22px;
+    line-height: 100%;
+}
+
+.menu-item ul li.active {
+    color: #44a959;
+}
+
+.menu-item.active .card-menu-title {
+    color: #44a959;
+    background-image: url("../images/dh_xlg.png");
+}
+
+.card-menu-title.collapse {
+    background-image: url("../images/dh_xl2.png");
+    background-size: 8px 12px;
+}
+
+.right-card-content {
+    margin-left: 179px;
+}
+
+.query-field {
+    overflow: hidden;
+    float: left;
+    margin-right: 19px;
+}
+
+.field-label {
+    height: 36px;
+    line-height: 36px;
+    float: left;
+    margin-right: 5px;
+}
+
+.field-input {
+    padding: 0 9px;
+    box-sizing: border-box;
+    height: 36px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    float: left;
+}
+
+.field-select {
+    padding: 0 19px 0 9px;
+    box-sizing: border-box;
+    height: 36px;
+    line-height: 34px;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    float: left;
+    position: relative;
+}
+
+.field-select:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 9px;
+    width: 10px;
+    height: 100%;
+    background: #ffffff url("../images/srk_xl.png") no-repeat center/10px 7px;
+}
+
+.field-input input {
+    width: 100%;
+    outline: none;
+}
+
+.query-toolbox {
+    float: right;
+    margin: 14px 0 15px;
+}
+
+.query-btn {
+    float: left;
+}
+
+.toolbox-box {
+    overflow: hidden;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.query-result-box {
+    padding: 20px 10px;
+}
+
+.query-result-box li {
+    padding: 10px;
+    float: left;
+}
+
+.user-box {
+    width: 270px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+}
+
+.avatar {
+    float: left;
+    padding: 19px;
+}
+
+.avatar image {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.user-info {
+    float: left;
+    padding-top: 19px;
+}
+
+.user-name {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+.user-num {
+    color: #999;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/*升学年提示*/
+.tip-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 693px;
+    margin: 70px auto 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 4px;
+    border: solid 1px #eeeeee;
+}
+
+.modal-header {
+    background-color: #f5f5f5;
+    border-radius: 4px 4px 0 0;
+    height: 41px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.modal-title {
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    color: #666666;
+    font-size: 16px;
+}
+
+.modal-close {
+    margin-right: 10px;
+    height: 41px;
+    width: 30px;
+    float: right;
+    background: url("../images/tab_close.png") center/10px no-repeat;
+    cursor: pointer;
+}
+
+.modal-cont {
+    padding: 20px;
+}
+
+.grade-label-new {
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.grade-label-old {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grade-operate > div {
+    display: table;
+    margin: 0 auto;
+}
+
+.grade-operate > div.grade-img-box {
+    position: relative;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.grade-abs-text {
+    position: absolute;
+    right: 12px;
+    top: 40%;
+    color: #44a959;
+}
+
+.grade-operate {
+    margin-bottom: 45px;
+}
+
+.msg-title {
+    color: #44a959;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.msg-cont div {
+    color: #666666;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.modal-msg {
+    margin-bottom: 50px;
+}
+
+.modal-btn {
+    display: table;
+    margin: 0 auto;
+}
+
+/*宿舍学生管理*/
+.table-box {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sys-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+}
+
+.sys-table th, td {
+    text-align: left;
+    border-right: 1px solid #dddddd;
+    padding-left: 10px;
+}
+
+.sys-table th:last-child, .sys-table td:last-child {
+    text-align: center;
+}
+
+.sys-table td {
+    color: #666666;
+}
+
+.sys-table thead tr {
+    text-align: left;
+    background-color: #f7f7f7;
+    height: 40px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.sys-table tbody tr {
+    background-color: #fff;
+    height: 40px;
+}
+
+.sys-table tbody tr:nth-child(2n) {
+    background-color: #f7f7f7;
+    height: 40px;
+}
+
+.sm-btn {
+    display: inline-block;
+    font-size: 14px;
+    color: #44a959;
+    width: 50px;
+    height: 25px;
+    box-sizing: border-box;
+    line-height: 23px;
+    border: solid 1px #44a959;
+    border-radius: 4px;
+}
+
+.pages {
+    overflow: hidden;
+    margin-top: 21px;
+}
+
+.page-offset {
+    float: left;
+}
+
+.page-offset > div {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    color: #666;
+}
+
+.page-offset > div.page-input-box {
+    width: 50px;
+    line-height: 21px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    box-sizing: border-box;
+    margin: 0 6px;
+    padding: 0 3px;
+}
+
+.page-input-box input {
+    width: 100%;
+    outline: none;
+    font-size: 12px;
+}
+
+.page-list {
+    float: right;
+}
+
+.page-left, .page-right {
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: solid 1px #dddddd;
+    box-sizing: border-box;
+    float: left;
+    color: #cccccc;
+    margin-right: 10px;
+}
+
+.page-no {
+    min-width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: solid 1px #dddddd;
+    box-sizing: border-box;
+    float: left;
+    color: #cccccc;
+    margin-right: 10px;
+}
+
+.page-no.active {
+    color: #44a959;
+    border: solid 1px #44a959;
+}
+
+.page-label {
+    float: left;
+    color: #cccccc;
+    height: 24px;
+    line-height: 24px;
+}
+
+.page-no-box {
+    float: left;
+    overflow: hidden;
+}
+
+.house-card {
+    width: 222px;
+    height: 250px;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 20px 18px;
+}
+
+.house-name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.target-num, .inner-num, .outer-num {
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.target-num span, .inner-num span, .outer-num span {
+    width: 140px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.target-num b, .inner-num b, .outer-num b {
+    text-align: right;
+    float: right;
+    font-weight: normal;
+}
+
+.target-num span {
+    color: #555;
+}
+
+.inner-num span {
+    color: #44a959;
+}
+
+.outer-num span {
+    color: #ff4400;
+}
+
+.house-detail {
+    color: #44a959;
+    padding-right: 10px;
+    line-height: 100%;
+    background: url("../images/sskkq_xq.png") right center/6px 10px no-repeat;
+    text-align: right;
+}
+
+.base-card-title {
+    padding: 30px 20px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.base-card-title b {
+    font-size: 18px;
+}
+
+.abs-export {
+    position: absolute;
+    right: 20px;
+    top: 27px;
+    width: 40px;
+    height: 24px;
+    box-sizing: border-box;
+    line-height: 22px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #44a959;
+    color: #44a959;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.base-card-info-content {
+    padding: 20px 20px 31px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.info-avatar {
+    float: left;
+}
+
+.info-avatar img {
+    display: block;
+}
+
+.info-fields {
+    float: left;
+    margin-left: 50px;
+}
+
+/*弹窗表单*/
+.modal-form {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.modal-form .field-label {
+    width: 70px;
+    text-align: right;
+    margin-right: 22px;
+}
+
+.modal-form .field-select {
+    width: 210px;
+}
+
+.modal-form .field-input {
+    width: 210px;
+}
+
+.modal-form .query-field {
+    margin-bottom: 20px;
+}
+
+.modal-form .query-field:nth-child(2n-1) {
+    margin-right: 20px;
+}
+
+/*学校基本信息*/
+.school-content {
+    position: relative;
+    padding: 20px;
+}
+
+.school-view {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 111px;
+}
+
+.school-img img {
+    display: block;
+    width: 111px;
+    height: 148px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+}
+
+.img-upload-btn {
+    width: 94px;
+    height: 24px;
+    margin: 15px auto;
+    line-height: 24px;
+    background-color: #44a959;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.school-form-box {
+    margin-left: 160px;
+}
+
+.school-label {
+    width: 70px;
+    text-align: right;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 11px;
+    color: #666666;
+    font-size: 14px;
+    float: left;
+}
+
+.school-label.red:before {
+    content: "*";
+    color: red;
+}
+
+.school-input, .school-sel {
+    padding: 0 9px;
+    height: 36px;
+    width: 200px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+}
+
+.school-sel:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 9px;
+    width: 10px;
+    height: 100%;
+    background: #ffffff url("../images/srk_xl.png") no-repeat center/10px 7px;
+}
+
+.school-input input {
+    width: 100%;
+    outline: none;
+}
+
+.school-val {
+    overflow: hidden;
+    padding-top: 6px;
+}
+
+.school-scan {
+    width: 40px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #44a959;
+    box-sizing: border-box;
+    line-height: 22px;
+    float: left;
+    color: #44a959;
+    margin-right: 9px;
+    text-align: center;
+}
+
+.school-file {
+    height: 24px;
+    line-height: 24px;
+    color: #666666;
+    font-size: 14px;
+    float: left;
+}
+
+.school-btn-box {
+    display: table;
+    margin: 0 auto;
+}
+
+.school-row {
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+}
+
+.school-field, .school-line {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.school-form {
+    overflow: hidden;
+}
+
+.school-text-box {
+    position: relative;
+}
+
+.school-text-box .school-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.school-text {
+    margin-left: 81px;
+    height: 150px;
+}
+
+.school-text textarea {
+    padding: 5px 8px;
+    resize: none;
+    font-size: 14px;
+    line-height: 26px;
+    width: 100%;
+    height: 100%;
+    border: solid 1px #dddddd;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.school-radio {
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+}
+
+.school-radio label {
+    line-height: 19px;
+    display: block;
+    float: left;
+    margin-top: 9px;
+    margin-right: 29px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #666666;
+}
+
+/*radio样式优化*/
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + i {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: #f5f7f8;
+    border: solid 1px #dddddd;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+input[type="radio"]:checked + i {
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: solid 1px #44a959;
+    position: relative;
+}
+
+input[type="radio"]:checked + i:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background-color: #44a959;
+    border-radius: 4px;
+}
+
+/*新增班级*/
+.modal-add-box {
+    padding-left: 20px;
+}
+
+.modal-add-title {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.modal-add-cont {
+    overflow: hidden;
+    padding-bottom:20px;
+}
+
+.modal-add-cont li {
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 43px;
+}
+.modal-add-cont li:nth-child(3n){
+    margin-right: 10px;
+}
+
+.form-dot {
+    float: left;
+    padding:10px 0;
+    height: 14px;
+    width: 14px;
+    box-sizing: content-box;
+    margin-right: 5px;
+    background: url("../images/fxk_bg.png") center/14px no-repeat;
+}
+.form-dot-text{
+    height: 34px;
+    line-height: 34px;
+    width:56px;
+    float: left;
+}
+
+.form-calc {
+    overflow: hidden;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+
+.calc-add {
+    width: 30px;
+    height: 34px;
+    background: url("../images/num_add.png") center/30px 34px no-repeat;
+    float: left;
+}
+
+.calc-reduce {
+    width: 30px;
+    height: 34px;
+    background: url("../images/num_j.png") center/30px 34px no-repeat;
+    float: left;
+}
+
+.calc-input{
+    width: 40px;
+    height: 34px;
+    float: left;
+    padding:0 5px;
+    line-height: 34px;
+    text-align: center;
+    color: #333333;
+    font-size: 14px;
+}

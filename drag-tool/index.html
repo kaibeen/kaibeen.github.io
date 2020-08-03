@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化开发</title>
+    <script src="../asset/js/jquery.js"></script>
+    <link href="main.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="style/style2.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="nav">
+        <div class="">
+        </div>
+        <div style="margin-left: 180px;padding-top: 7px;">
+            <button id="preview">预览</button>
+            <button id="edit">编辑</button>
+            <button id="download">下载代码</button>
+        </div>
+    </div>
+    <div class="slide">
+        <ul class="menu-list">
+            <li>
+                <div class="layout-set">布局设置</div>
+                <ul class="sub-menu-list">
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont">
+                                <input value="12"/>
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont">
+                                <input value="6 6"/>
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont">
+                                <input value="4 4 4"/>
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont">
+                                <input value="3 3 3 3"/>
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont">
+                                <input value="3 6 3"/>
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-rate="3 3 3 3">
+                                定位
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="layout-set">组件</div>
+                <ul class="sub-menu-list">
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="title">
+                                标题
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="form">
+                                表单
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="table">
+                                表格
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="pages">
+                                分页
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="toolbox">
+                                工具栏
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="drag-matter-box">
+                            <div class="drag-matter-cont" data-name="row-list">
+                                列展示
+                            </div>
+                            <button class="drag-matter-btn">拖动</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="box main-box">
+        </div>
+    </div>
+    <div style="display: none;position: fixed;top:10px; left:200px;">
+        <div id="grid-layout" class="normal-box" style="width: 350px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">12</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content"></div>
+        </div>
+        <div id="abs-layout" style="width: 350px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">12</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div class="rel-container">
+                    <div class="box abs-box"></div>
+                    <div class="box rel-child-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;position: fixed;top:10px; left:200px;">
+        <div id="component-title" class="normal-box" style="width: 650px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">标题</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div class="primary-title">
+                    <b>在宿学生</b>
+                </div>
+            </div>
+        </div>
+        <div id="component-form" class="normal-box" style="width: 650px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">表单</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div class="form-box">
+                    <div class="form-item">
+                        <div class="form-label">原密码</div>
+                        <div class="form-input">
+                            <input placeholder="请输入原密码"/>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-label">新密码</div>
+                        <div class="form-input">
+                            <input placeholder="请输入新密码"/>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-label">确认新密码</div>
+                        <div class="form-input">
+                            <input placeholder="请再次输入新密码"/>
+                        </div>
+                    </div>
+                    <div class="form-btn-box">
+                        <button class="primary-btn">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="component-table" class="normal-box" style="width: 650px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">表格</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <table class="sys-table">
+                    <thead>
+                        <tr>
+                            <th>学生名称</th>
+                            <th>学号/工号</th>
+                            <th>班级</th>
+                            <th>身份</th>
+                            <th>宿舍名称</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>御坂美琴</td>
+                            <td>201901001</td>
+                            <td>一年级（10）班</td>
+                            <td>舍长</td>
+                            <td>南苑001</td>
+                            <td>
+                                <div class="sm-btn">编辑</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="component-pages" class="normal-box" style="width: 650px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">分页</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div class="pages">
+                    <div class="page-offset">
+                        <div>第</div>
+                        <div class="page-input-box">
+                            <input/>
+                        </div>
+                        <div>页</div>
+                    </div>
+                    <div class="page-list">
+                        <div class="page-left">&lt;</div>
+                        <ul class="page-no-box">
+                            <li class="page-no active">1</li>
+                            <li class="page-no">2</li>
+                        </ul>
+                        <div class="page-right">&gt;</div>
+                        <div class="page-label">显示1-30条，共60页</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="component-toolbox" class="normal-box" style="width: 800px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">工具栏</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div class="toolbox-box">
+                    <div class="query-toolbox">
+                        <div class="query-field">
+                            <div class="field-label">入学年月</div>
+                            <div class="field-input" style="width: 90px;">
+                                <input value="2019-04"/>
+                            </div>
+                        </div>
+                        <div class="query-field">
+                            <div class="field-label">状态</div>
+                            <div class="field-select" style="width: 64px;">全部</div>
+                        </div>
+                        <div class="query-btn">
+                            <button class="primary-btn" style="width: 80px;">查询</button>
+                        </div>
+                        <div class="query-btn" style="margin-left: 10px">
+                            <button class="outer-btn" style="width: 80px;">新增</button>
+                        </div>
+                        <div class="query-btn" style="margin-left: 10px">
+                            <button class="outer-btn" style="width: 80px;">删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="component-row-list" class="normal-box" style="width: 720px;border-radius: 4px;">
+            <div style="height: 40px;position: relative">
+                <div class="drag-matter-cont">工具栏</div>
+                <button class="drag-matter-btn">拖动</button>
+            </div>
+            <div class="main-content">
+                <div>
+                    <div class="info-line">
+                        <div class="info-item">
+                            <div class="info-label">姓名</div>
+                            <div class="info-cont">谷函</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">手机号码</div>
+                            <div class="info-cont">188****8247
+                                <div class="info-btn">修改</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-item">
+                            <div class="info-label">性别</div>
+                            <div class="info-cont">女</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">身份证号</div>
+                            <div class="info-cont">440233********4532</div>
+                        </div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-item">
+                            <div class="info-label">所在学校</div>
+                            <div class="info-cont">广州市正盟国际幼儿园</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">工号</div>
+                            <div class="info-cont">20191120114</div>
+                        </div>
+                    </div>
+                    <div class="info-line last">
+                        <div class="info-item">
+                            <div class="info-label">岗位职称</div>
+                            <div class="info-cont">教职工/班主任</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">主教科目</div>
+                            <div class="info-cont">语文/国学</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

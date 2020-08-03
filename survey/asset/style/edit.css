@@ -1,0 +1,1111 @@
+/*问卷编辑*/
+input {
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    position: relative;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ccc;
+}
+
+.main-float-btn-group {
+    float: right;
+}
+
+.slide-panel {
+    position: fixed;
+    left: 0;
+    width: 334px;
+    bottom: 23px;
+    top: 3px;
+    border-right: 1px solid #eaeaea;
+}
+
+.panel-item {
+    padding: 20px 0 0 20px;
+}
+
+.panel-title {
+    color: #999999;
+    margin-bottom: 20px;
+}
+
+.panel-cont {
+    overflow: hidden;
+    padding-right: 1px;
+}
+
+.type-option {
+    float: left;
+    width: 90px;
+    padding-left: 46px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #eaeaea;
+    margin-bottom: 18px;
+    margin-right: 18px;
+    color: #666666;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.type-active {
+    color: #44a959;
+    border: solid 1px #44a959;
+    cursor: pointer;
+}
+
+.type-option div {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 21px;
+    top: 8px;
+}
+
+/*单选题*/
+.type-single-select {
+    background: url("../image/ico_y_option1_1.png");
+}
+
+.type-active .type-single-select {
+    background: url("../image/ico_y_option1_2.png");
+}
+
+/*多选题*/
+.type-multiple-select {
+    background: url("../image/ico_y_option2_1.png");
+}
+
+.type-active .type-multiple-select {
+    background: url("../image/ico_y_option2_2.png");
+}
+
+/*单行文本题*/
+.type-single-text {
+    background: url("../image/ico_y_option3_1.png");
+}
+
+.type-active .type-single-text {
+    background: url("../image/ico_y_option3_2.png");
+}
+
+/*多行文本题*/
+.type-multiple-text {
+    background: url("../image/ico_y_option4_1.png");
+}
+
+.type-active .type-multiple-text {
+    background: url("../image/ico_y_option4_2.png");
+}
+
+/*图片题*/
+.type-image {
+    background: url("../image/ico_y_option5_1.png");
+}
+
+.type-active .type-image {
+    background: url("../image/ico_y_option5_2.png");
+}
+
+/*打分题*/
+.type-score {
+    background: url("../image/ico_y_option6_1.png");
+}
+
+.type-active .type-score {
+    background: url("../image/ico_y_option6_2.png");
+}
+
+/*文件题*/
+.type-file {
+    background: url("../image/ico_y_option7_1.png");
+}
+
+.type-active .type-file {
+    background: url("../image/ico_y_option7_2.png");
+}
+
+.type-add {
+    background: url("../image/ico_y_add.png");
+}
+
+.type-option2 {
+    width: 136px;
+    padding-left: 0;
+}
+
+.type-option2 img {
+    display: block;
+    width: 14px;
+    margin: 10px auto 0;
+}
+
+.main3 {
+    margin-left: 360px;
+    margin-top: 0;
+}
+
+.main3 .main-title-box {
+    overflow: hidden;
+    padding-right: 0;
+}
+
+.main-float-btn-group {
+    float: right;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.main-float-btn-group div {
+    float: left;
+}
+
+.main-float-btn-group .plain-btn {
+    margin-right: 20px;
+}
+
+
+/*题目编辑*/
+.edit-container {
+    padding-top: 3px;
+    padding-left: 203px;
+}
+
+.edit-content-item-box {
+    position: relative;
+    width: 858px;
+    margin: 24px 0;
+}
+
+.edit-content-dash-box {
+    width: 920px;
+    height: 193px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+    border: 1px dashed #eaeaea;
+    border-radius: 4px;
+}
+
+.edit-content-item {
+    width: 858px;
+    min-height: 193px;
+    box-sizing: border-box;
+    padding: 21px 18px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #eaeaea;
+    position: relative;
+}
+
+.edit-show-box {
+    user-select: none;
+}
+
+.show-box-title {
+    color: #333333;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.show-box-msg{
+    padding-bottom: 5px;
+    padding-left: 20px;
+    color: #999999;
+    font-size: 14px;
+}
+
+.edit-red {
+    color: #fe0000;
+    margin-left: 8px;
+}
+
+.show-box-cont {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.show-cont-item {
+    position: relative;
+    padding: 4px 0 4px 24px;
+    float: left;
+    width: 100%;
+    height: 30px;
+    line-height: 21px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.icon-single {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: url("../image/ico_y_option1_1.png");
+}
+
+.icon-single.icon-single-light {
+    background: url("../image/ico_y_option1_2.png");
+}
+
+.icon-multiple {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: url("../image/ico_y_option2_1.png");
+}
+
+.icon-multiple.icon-multiple-light {
+    background: url("../image/ico_y_option2_2.png");
+}
+
+
+.edit-config {
+    border-top: 1px solid #eaeaea;
+}
+
+.config-item {
+    margin-top: 22px;
+    overflow: hidden;
+    padding-left: 43px;
+    position: relative;
+}
+
+.config-item-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.config-item-input input {
+    width: 100%;
+    height: 36px;
+    padding: 0 8px;
+    line-height: 36px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+
+.config-options-box {
+    position: relative;
+    overflow: hidden;
+    padding-top: 2px;
+}
+
+.config-item2 {
+    margin-top: 20px;
+    overflow: hidden;
+    padding-left: 43px;
+    position: relative;
+}
+
+.config-item-short-input {
+    width: 450px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 0 8px;
+    border: solid 1px #dddddd;
+    float: left;
+}
+
+.icon-remove {
+    padding: 11px;
+    float: left;
+    cursor: pointer;
+}
+
+.icon-remove:after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url("../image/ico_y_del.png") no-repeat;
+}
+
+.config-item-abs-drag {
+    position: absolute;
+}
+
+.config-radio-box {
+    float: left;
+    height: 36px;
+    padding: 0 5px;
+    margin-left: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+.options-abs-config {
+    position: relative;
+}
+
+.options-abs-config div {
+    position: absolute;
+    left: 538px;
+    top: 2px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.config-options-add {
+    width: 450px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding-left: 38px;
+    border: 1px dashed #dddddd;
+    box-sizing: border-box;
+    color: #cccccc;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 43px;
+    cursor: pointer;
+}
+
+.icon-add {
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+    background: url("../image/ico_y_add.png");
+}
+
+.config-operate {
+    margin-left: 43px;
+    color: #44a959;
+    margin-top: 10px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.operate-add-else {
+    position: relative;
+    padding-left: 22px;
+    float: left;
+    height: 20px;
+    cursor: pointer;
+}
+
+.config-operate {
+    overflow: hidden;
+}
+
+.icon-add-light {
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background: url("../image/add_light.png");
+}
+
+.operate-change {
+    float: left;
+    margin-left: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.config-operate:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 19px;
+    background-color: #dddddd;
+    top: 1px;
+    left: 136px;
+}
+
+.edit-setting {
+    border-top: 1px solid #eee;
+    margin-top: 18px;
+    position: relative;
+    padding-top: 20px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.edit-setting-title {
+    position: absolute;
+    top: -10px;
+    left: 385px;
+    height: 20px;
+    line-height: 20px;
+    background: #fff;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+
+.edit-setting-toggle {
+    position: absolute;
+    right: 50px;
+    top: 26px;
+    height: 20px;
+    line-height: 20px;
+    color: #44a959;
+    font-size: 14px;
+    cursor: pointer;
+    padding-right: 20px;
+    z-index: 22;
+}
+
+.icon-toggle {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    height: 12px;
+    width: 12px;
+    background: url("../image/ico_y_down.png");
+}
+
+.toggle-more .icon-toggle {
+    background: url("../image/ico_y_up.png");
+}
+
+.setting-box {
+    overflow: hidden;
+    line-height: 36px;
+}
+
+.setting-left {
+    width: 192px;
+    float: left;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+.setting-left-item {
+    height: 36px;
+    display: block;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+
+.setting-right-item {
+    height: 36px;
+    margin-bottom: 18px;
+}
+
+.setting-right-item span {
+    margin-right: 14px;
+    float: left;
+}
+
+.setting-right-item select, .setting-right-item input, .setting-right-item .copy-select {
+    height: 36px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 4px;
+    width: 210px;
+    border: solid 1px #dddddd;
+    float: left;
+    padding: 0 5px;
+}
+
+.setting-right-item .copy-select, .setting-box-item .copy-select {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+.setting-right-item .copy-select:after, .setting-box-item .copy-select:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 7px;
+    position: absolute;
+    right: 8px;
+    top: 14px;
+    background: url("../image/select_down.png") no-repeat;
+}
+
+.setting-right-item select {
+    outline: none;
+}
+
+.container input[type='radio'] {
+    padding: 0;
+    background: url(../image/ico_y_option1_1.png);
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+}
+
+.container input[type='radio']:checked {
+    background: url(../image/ico_y_option1_2.png);
+}
+
+.container input[type='checkbox'] {
+    padding: 0;
+    background: url(../image/ico_y_option2_1.png);
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+}
+
+.container input[type='checkbox']:checked {
+    background: url(../image/ico_y_option2_2.png);
+}
+
+.setting-left-item input {
+    position: relative;
+    top: 6px;
+    margin-right: 4px;
+}
+
+.edit-btn-group {
+    overflow: hidden;
+    display: table;
+    margin: 20px auto 0;
+    padding-bottom: 1px;
+}
+
+.edit-btn-group div.sub-btn {
+    margin-right: 20px;
+}
+
+.edit-btn-group div {
+    float: left;
+    margin-bottom: 1px;
+}
+
+.copy-select-options {
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    left: -1px;
+    margin-top: 10px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 4px;
+    border: solid 1px #e1e1e1;
+    padding: 5px 0;
+    z-index: 999;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.copy-select-options > div {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+}
+
+.copy-select-options > div:hover {
+    color: #44a959;
+    background-color: #f7f7f7;
+}
+
+.copy-select-show {
+    padding: 0 5px;
+}
+
+.config-item-abs-drag {
+    position: absolute;
+    left: 14px;
+    padding: 10px 5px;
+    top: 0;
+    cursor: move;
+}
+
+.config-item-abs-drag:after {
+    content: '';
+    display: block;
+    height: 16px;
+    width: 16px;
+    background: url("../image/ico_y_move.png");
+}
+
+.config-options-else {
+    width: 450px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 8px;
+    font-size: 14px;
+    color: #cccccc;
+    margin-top: 20px;
+    margin-left: 43px;
+}
+
+.config-options-else div {
+    position: absolute;
+    width: 121px;
+    height: 1px;
+    background: #ccc;
+    left: 50px;
+    top: 23px;
+}
+
+/*dash-class*/
+/*问题选项拖拽占位框*/
+.config-item-dash {
+    margin-top: 20px;
+    overflow: hidden;
+    margin-left: 43px;
+    position: relative;
+    border: 1px dashed #eaeaea;
+    height: 36px;
+    width: 560px;
+    border-radius: 4px;
+}
+
+
+/*弹出框*/
+.options-modal {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    width: 693px;
+    margin: 70px auto 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 4px;
+    border: solid 1px #eeeeee;
+}
+
+.options-modal-box {
+    z-index: 999;
+    position: relative;
+}
+
+.modal-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.modal-title {
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    color: #666666;
+    font-size: 16px;
+}
+
+.modal-close {
+    margin-right: 10px;
+    height: 41px;
+    width: 30px;
+    float: right;
+    background: url(../image/tab_close.png) center/10px no-repeat;
+    cursor: pointer;
+}
+
+.modal-header {
+    background-color: #f5f5f5;
+    border-radius: 4px 4px 0 0;
+    height: 41px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.modal-cont {
+    padding: 20px;
+}
+
+.modal-btn-group {
+    display: table;
+    margin: 0 auto;
+}
+
+.modal-btn-group div {
+    float: left;
+}
+
+.modal-editor {
+    margin: 10px 16px 33px;
+    height: 250px;
+    background-color: #ffffff;
+}
+
+.modal-editor textarea {
+    border: solid 1px #e1e1e1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    resize: none;
+    line-height: 28px;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #666666;
+}
+
+
+/*题目工具栏*/
+.edit-toolbox {
+    position: absolute;
+    left: 856px;
+    top: 0;
+    width: 60px;
+    height: 193px;
+    background-color: #f9f9f9;
+    border-radius: 0 4px 4px 0;
+    border: solid 1px #eaeaea;
+    box-sizing: border-box;
+    padding-top: 20px;
+    display: none;
+}
+
+.edit-content-item-box:hover .edit-toolbox{
+    display: block;
+}
+.edit-content-item-box.fix-show .edit-toolbox{
+    display: block;
+}
+.edit-content-item-box.is-edit .edit-toolbox{
+    display: none;
+}
+
+.edit-toolbox-drag, .edit-toolbox-change, .edit-toolbox-del {
+    width: 100%;
+    height: 52px;
+    background: center /24px no-repeat;
+    cursor: pointer;
+}
+
+.edit-toolbox-drag {
+    cursor: move;
+    background-image: url("../image/ico_y_right_move1.png");
+}
+
+.edit-toolbox-drag:hover {
+    background-image: url("../image/ico_y_right_move2.png");
+}
+
+.edit-toolbox-change {
+    background-image: url("../image/ico_y_right_copy1.png");
+}
+
+.edit-toolbox-change:hover {
+    background-image: url("../image/ico_y_right_copy2.png");
+}
+
+.edit-toolbox-del {
+    background-image: url("../image/ico_y_right_del1.png");
+}
+
+.edit-toolbox-del:hover {
+    background-image: url("../image/ico_y_right_del2.png");
+}
+
+
+/*单行文本*/
+.single-input-box {
+    margin-left: 2px;
+    margin-top: 9px;
+    margin-bottom: 12px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+
+/*多行文本*/
+.multiple-input-box {
+    margin-left: 2px;
+    margin-top: 9px;
+    margin-bottom: 12px;
+    height: 98px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+
+.setting-box-item {
+    float: left;
+    overflow: hidden;
+    margin-left: 58px;
+    margin-bottom: 10px;
+}
+
+.setting-box-item:first-child {
+    margin-left: 0;
+}
+
+.setting-box-item label {
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+}
+
+.setting-box-item label input {
+    float: left;
+    position: relative;
+    top: 9px;
+    margin-right: 4px;
+}
+
+.setting-box-item label span {
+    margin-right: 4px;
+}
+
+.setting-box-item span {
+    float: left;
+}
+
+.setting-box-item select, .setting-box-item > input, .setting-box-item .copy-select {
+    height: 36px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 4px;
+    width: 119px;
+    border: solid 1px #dddddd;
+    float: left;
+    padding: 0 5px;
+    margin-left: 14px;
+}
+
+input {
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.setting-box-item input {
+    margin: 0 12px;
+}
+
+.edit-setting2 {
+    margin-top: 40px;
+}
+
+/*图片选择*/
+.switch-box {
+    overflow: hidden;
+    padding-top: 3px;
+    position: relative;
+}
+
+.switch-item {
+    width: 98px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    background-color: #ffffff;
+    border: solid 1px #cccccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.switch-box .switch-item:last-child:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    border-right: 1px solid #44a959;
+}
+
+.switch-box .switch-item:first-child {
+    border-right: none;
+}
+
+.switch-box .switch-item:last-child {
+    border-left: none;
+    position: relative;
+}
+
+.switch-item.switch-on {
+    color: #44a959;
+    border: solid 1px #44a959;
+    cursor: default;
+}
+
+.show-image-item {
+    float: left;
+    width: 140px;
+    display: block;
+    margin-right: 23px;
+    position: relative;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.show-image-item img {
+    display: block;
+    width: 140px;
+    height: 140px;
+}
+
+.show-image-item:nth-child(5n) {
+    margin-right: 0;
+}
+
+.show-image-item .img-label {
+    padding: 2px 20px 3px 3px;
+    box-sizing: border-box;
+    position: relative;
+    color: #333333;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.show-image-item textarea.img-msg {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    outline: none;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.img-label-abs {
+    position: absolute;
+    right: 20px;
+    top: -2px;
+}
+
+.edit-image-box {
+    margin-left: 43px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.edit-image-box .show-image-item {
+    margin-right: 18px;
+    user-select: none;
+}
+
+.edit-image-box .show-image-item:nth-child(5n) {
+    margin-right: 0;
+}
+
+.show-image-item.image-add {
+    width: 140px;
+    height: 180px;
+    box-sizing: border-box;
+    border: #ccc dashed 1px;
+    position: relative;
+}
+
+.show-image-item.image-add img {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.show-image-item.image-add > div {
+    position: absolute;
+    top: 125px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+}
+
+.show-image-item textarea {
+    user-select: unset;
+}
+
+.show-box-cont .subject-score {
+    padding-top: 5px;
+    height: 36px;
+}
+
+.edit-image-box .subject-score {
+    height: 36px;
+}
+
+.show-box-cont .subject-score .star-box {
+    cursor: default;
+}
+
+.show-box-cont .subject-score img {
+    display: block;
+}
+
+.edit-image-box .subject-score img {
+    display: block;
+}
+
+.edit-image-box .subject-score {
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.star-box {
+    background: url("../image/ico_y_stars1.png");
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    padding-right: 25px;
+    margin-right: 0;
+}
+
+.star-box.star-light {
+    background: url("../image/ico_y_stars2.png");
+    background-repeat: no-repeat;
+
+}
+
+.image-abs-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url("../image/tab_close.png") center #f2f2f2 no-repeat;
+    border-radius: 0 0 0 4px;
+    cursor: pointer;
+}

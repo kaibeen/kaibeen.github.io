@@ -1,0 +1,774 @@
+.slide-nav {
+    position: absolute;
+    left: 58px;
+    top: 139px;
+}
+
+.nav-bar {
+    width: 20px;
+    padding: 21px 19px 0;
+    height: 98px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 110%;
+    color: #666666;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    border: solid 1px #eaeaea;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-arrow {
+    height: 30px;
+    padding: 12px 0;
+}
+
+.nav-arrow img {
+    display: block;
+    width: 29px;
+    margin: 0 auto;
+}
+
+.nav-bar.nav-on {
+    background-color: #44a959;
+    border: solid 1px #44a959;
+    color: white;
+    cursor: default;
+}
+
+.main {
+    margin-left: 224px;
+    margin-top: 45px;
+    margin-right: 21px;
+    min-width: 1000px;
+}
+
+.main2 {
+    margin-left: 28px;
+    margin-top: 25px;
+    margin-right: 21px;
+    min-width: 1000px;
+}
+
+.main-title-box {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 6px;
+}
+
+.main-title {
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-label {
+    color: #999999;
+    font-size: 14px;
+}
+
+.cont-container {
+    padding-top: 27px;
+}
+
+.cont-label {
+    margin-bottom: 34px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cont-box {
+    padding-left: 40px;
+    overflow: hidden;
+}
+
+.user-card {
+    padding: 0 73px;
+    float: left;
+    width: 120px;
+}
+
+.user-card:last-child {
+    padding-right: 0;
+}
+
+.user-image {
+    width: 120px;
+    height: 120px;
+}
+
+.user-image img {
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+
+.user-label {
+    font-size: 14px;
+    color: #333333;
+    display: table;
+    margin: 22px auto 0;
+}
+
+.user-detail {
+    display: table;
+    color: #44a959;
+    font-size: 14px;
+    margin: 11px auto 0;
+    cursor: pointer;
+    line-height: 100%;
+}
+
+.user-detail img {
+    position: relative;
+    top: 3px;
+}
+
+.share-cont {
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.share-label {
+    float: left;
+    width: 88px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.share-target-box, .share-target-text {
+    float: left;
+    width: 700px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #eaeaea;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #666666;
+    font-size: 14px;
+}
+
+.share-target-text {
+    resize: none;
+    outline: none;
+}
+
+.share-target-text:focus {
+    border: solid 1px #44a959;
+}
+
+.share-btn-group {
+    float: left;
+    width: 220px;
+    padding-top: 22px;
+}
+
+.share-btn-group div {
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #44a959;
+    border-radius: 4px;
+    border: solid 1px #44a959;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    margin-left: 23px;
+    float: left;
+    cursor: pointer;
+}
+
+
+.share-msg {
+    clear: both;
+    margin-left: 88px;
+    color: #cccccc;
+    font-size: 14px;
+    padding-top: 12px;
+}
+
+.main-title-box {
+    padding-right: 230px;
+    position: relative;
+}
+
+.main-abs-btn-group {
+    position: absolute;
+    right: 0;
+    bottom: 19px;
+    width: 230px;
+}
+
+.btn-right {
+    float: right;
+}
+
+.btn-right.plain-btn {
+    margin-left: 26px;
+}
+
+/*按钮缕空*/
+.plain-btn {
+    padding: 0 20px;
+    min-width: 38px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #44a959;
+    color: #44a959;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*主题按钮*/
+.primary-btn {
+    padding: 0 20px;
+    min-width: 38px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #44a959;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*主题按钮*/
+.sub-btn {
+    padding: 0 20px;
+    min-width: 38px;
+    height: 34px;
+    line-height: 34px;
+    border: solid 1px #eaeaea;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    color: #666666;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*填写问卷页面*/
+.subject-container {
+    padding-top: 3px;
+}
+
+.subject-item {
+    margin: 24px 0;
+    width: 812px;
+    padding: 21px 22px 22px 22px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #eaeaea;
+    position: relative;
+}
+
+.subject-title {
+    color: #333333;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: bold;
+}
+
+.subject-red {
+    font-size: 16px;
+    color: #fe0000;
+    margin-left: 10px;
+}
+
+.subject-cont {
+    padding-top: 8px;
+    padding-left: 18px;
+}
+
+.select-btn {
+    top: 2px;
+    position: relative;
+}
+
+.select-option {
+    color: #333333;
+    font-size: 14px;
+    line-height: 100%;
+    padding: 6px 0;
+}
+
+.subject-label {
+    color: #999999;
+    font-size: 14px;
+    line-height: 100%;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+input, textarea {
+    outline: none;
+}
+
+.subject-input {
+    width: 777px;
+    height: 34px;
+    padding: 0 10px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    color: #333;
+    font-size: 14px;
+}
+
+.subject-text {
+    width: 777px;
+    height: 86px;
+    padding: 5px 10px;
+    line-height: 16px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    resize: none;
+    color: #333333;
+    font-size: 14px;
+}
+
+.img-container {
+    overflow: hidden;
+}
+
+.img-box {
+    float: left;
+    width: 140px;
+    display: block;
+    margin-right: 23px;
+    margin-top: 12px;
+    position: relative;
+}
+
+.img-box img {
+    display: block;
+    width: 140px;
+    height: 140px;
+}
+
+.img-label {
+    padding: 3px 20px 3px 3px;
+    position: relative;
+    color: #333333;
+    height: 38px;
+    border: 1px solid #eaeaea;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.img-label input {
+    position: absolute;
+    right: 3px;
+    top: 2px;
+}
+
+.subject-score {
+    padding-top: 1px;
+    overflow: hidden;
+}
+
+.star-box {
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.upload-box {
+    margin-top: 10px;
+    width: 436px;
+    padding-left: 14px;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: dashed 1px #dddddd;
+    color: #cccccc;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.upload-box img {
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+}
+
+.upload-item {
+    color: #333333;
+    font-size: 14px;
+    position: relative;
+    padding-left: 48px;
+    margin-top: 7px;
+    display: block;
+    cursor: pointer;
+    text-decoration: unset;
+    line-height: 30px;
+}
+
+
+.upload-item img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.upload-item span.upload-remove {
+    color: #ff5d5d;
+    margin-left: 16px;
+}
+
+/*参与问卷调查*/
+.subject-btn-group {
+    overflow: hidden;
+    display: table;
+    margin: 30px auto;
+}
+
+.subject-btn-group div {
+    float: left;
+}
+
+.subject-btn-group .sub-btn {
+    margin-right: 27px;
+}
+
+.subject-process {
+    width: 858px;
+    margin-top: 37px;
+}
+
+.process-bar {
+    width: 858px;
+    height: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    position: relative;
+}
+
+.process-primary .process-cont {
+    background-color: #44a959;
+}
+
+.process-cont {
+    background-color: #ffbe3a;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.process-point {
+    position: absolute;
+    top: -6px;
+}
+
+.point-center {
+    width: 20px;
+    height: 20px;
+    background-color: #f7f7f7;
+    border: solid 1px #cccccc;
+    border-radius: 50%;
+    position: absolute;
+    left: -11px;
+}
+
+.process-primary .point-dot {
+    background-color: #44a959;
+}
+
+.point-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ffbe3a;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.process-text {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+    margin-top: 13px;
+}
+
+
+/*投票结果*/
+.abs-img-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+}
+
+.img-rate {
+    margin-top: 41px;
+    font-size: 30px;
+    line-height: 100%;
+}
+
+.img-total {
+    font-size: 14px;
+    line-height: 100%;
+    margin-top: 21px;
+}
+
+.subject-abs-options {
+    position: absolute;
+    right: 18px;
+    top: 50px;
+}
+
+.abs-option-item {
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    color: #666666;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.option-num {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.option-rate {
+    float: left;
+    margin-left: 5px;
+}
+
+.option-bar {
+    float: left;
+    width: 200px;
+    height: 10px;
+    margin-top: 6px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    position: relative;
+}
+
+.option-process-cont {
+    background-color: #44a959;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.option-process-point {
+    position: absolute;
+    top: -6px;
+}
+
+.option-point-center {
+    width: 20px;
+    height: 20px;
+    background-color: #f7f7f7;
+    border: solid 1px #cccccc;
+    border-radius: 50%;
+    position: absolute;
+    left: -11px;
+}
+
+.option-point-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #44a959;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+/*表格*/
+.score-table {
+    margin-top: 15px;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: solid 1px #eaeaea;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #666666;
+    font-size: 14px;
+}
+
+.score-table td {
+    border: 1px solid #dddddd;
+    height: 39px;
+    width: 77px;
+    text-align: center;
+}
+
+/*数据统计*/
+.subject-table-box {
+    margin: 24px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.subject-box {
+    overflow: hidden;
+}
+
+.subject-chart {
+    margin-top: 21px;
+    float: left;
+    width: 484px;
+    height: 201px;
+    padding: 0 17px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+
+.subject-table-container {
+    float: left;
+    margin-right: 27px;
+    width: 834px;
+}
+
+.subject-table {
+    margin-top: 21px;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: solid 1px #eaeaea;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+.subject-table span {
+    color: #44a959;
+}
+
+.subject-table td, .subject-table th {
+    min-height: 38px;
+    padding: 8px 0;
+    line-height: 180%;
+    width: 77px;
+    font-weight: normal;
+}
+
+.subject-table thead {
+    font-weight: normal;
+    color: #333333;
+}
+
+.subject-table .td-first {
+    padding-left: 27px;
+    padding-right: 27px;
+    text-align: left;
+}
+
+.subject-table .td-second {
+    padding-left: 27px;
+    padding-right: 27px;
+    text-align: left;
+}
+
+.subject-table tr {
+    height: 40px;
+}
+
+.subject-table thead tr {
+    background-color: #f7f7f7;
+    height: 40px;
+}
+
+.subject-table tbody tr:nth-child(2n) {
+    background-color: #f7f7f7;
+    height: 40px;
+}
+
+.last-tr td {
+    padding-left: 24px;
+    text-align: left;
+    color: #999999;
+}
+
+/*分页*/
+.subject-page-box {
+    overflow: hidden;
+}
+
+.subject-page {
+    float: right;
+    overflow: hidden;
+    height: 26px;
+    color: #666666;
+    font-size: 14px;
+    padding: 10px 0 0;
+}
+
+.subject-page input {
+    float: left;
+    width: 30px;
+    padding: 0 6px;
+    height: 22px;
+    line-height: 22px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+    font-size: 14px;
+    color: #333333;
+    margin: 0 5px;
+}
+
+.subject-page div {
+    float: left;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.subject-page div.subject-page-total {
+    margin-right: 20px;
+    cursor: default;
+}
+
+/*图表容器*/
+.subject-chart-nav {
+    height: 37px;
+    display: table;
+    margin: 0 auto;
+}
+
+.subject-chart-nav .nav-item {
+    margin: 0 18px;
+    width: 50px;
+    text-align: center;
+    padding-top: 15px;
+    line-height: 100%;
+    color: #333333;
+    font-size: 14px;
+    float: left;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.subject-chart-nav .nav-item.nav-active {
+    border-bottom: 2px solid #44a959;
+    color: #44a959;
+    cursor: unset;
+}
+
+.chart-box{
+    height: 150px;
+}
+
+

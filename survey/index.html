@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑问卷</title>
+    <link rel="stylesheet" href="asset/style/main.css">
+    <link rel="stylesheet" href="asset/style/edit.css">
+    <script src="../asset/js/jquery.js"></script>
+</head>
+<body style="padding-bottom: 200px;" class="container">
+    <div>
+        <div class="slide-panel">
+            <div class="panel-item">
+                <div class="panel-title">题目类型</div>
+                <div class="panel-cont">
+                    <div class="type-option type-active" data-type="singleSelect">
+                        <div class="type-single-select"></div>
+                        <span>单选题</span>
+                    </div>
+                    <div class="type-option" data-type="multipleSelect">
+                        <div class="type-multiple-select"></div>
+                        <span>多选题</span>
+                    </div>
+                    <div class="type-option" data-type="singleText">
+                        <div class="type-single-text"></div>
+                        <span>单行文本题</span>
+                    </div>
+                    <div class="type-option" data-type="multipleText">
+                        <div class="type-multiple-text"></div>
+                        <span>多行文本题</span>
+                    </div>
+                    <div class="type-option" data-type="image">
+                        <div class="type-image"></div>
+                        <span>图片题</span>
+                    </div>
+                    <div class="type-option" data-type="score">
+                        <div class="type-score"></div>
+                        <span>打分题</span>
+                    </div>
+                    <div class="type-option" data-type="file">
+                        <div class="type-file"></div>
+                        <span>文件题</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-item">
+                <div class="panel-title">题库</div>
+                <div class="panel-cont">
+                    <div class="type-option type-option2">
+                        <img class="type-add" src="asset/image/ico_y_add.png"/>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-item">
+                <div class="panel-title">问卷</div>
+                <div class="panel-cont">
+                    <div class="type-option type-option2">
+                        <img class="type-add" src="asset/image/ico_y_add.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main main3">
+            <div class="main-title-box">
+                <div class="main-float-btn-group">
+                    <div class="plain-btn">预览</div>
+                    <div class="primary-btn">保存并发布</div>
+                </div>
+            </div>
+            <!--问题容器-->
+            <div class="edit-container"></div>
+        </div>
+    </div>
+    <!--选项模板-->
+    <div class="options-template" style="display: none;">
+        <!--单选题-->
+        <div id="question-single-select-option">
+            <div class="config-item2">
+                <input class="config-item-short-input" placeholder="选项"/>
+                <div class="icon-remove"></div>
+                <div class="config-radio-box" style="display: none;">
+                    <input type="radio" name="question1"/>
+                </div>
+                <div class="config-item-abs-drag" style="display: none;"></div>
+            </div>
+        </div>
+        <!--多选题-->
+        <div id="question-multiple-select-option">
+            <div class="config-item2">
+                <input class="config-item-short-input" placeholder="选项"/>
+                <div class="icon-remove"></div>
+                <div class="config-radio-box" style="display: none;">
+                    <input type="checkbox" name="question1"/>
+                </div>
+                <div class="config-item-abs-drag" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+    <!--弹出框,编辑选项-->
+    <div class="options-modal" style="display: none;">
+        <div class="modal-mask modal-cancel"></div>
+        <div class="options-modal-box">
+            <div class="modal-header">
+                <div class="modal-title">批量修改</div>
+                <div class="modal-close modal-cancel"></div>
+            </div>
+            <div class="modal-cont">
+                <div class="modal-editor">
+                    <textarea></textarea>
+                </div>
+                <div class="modal-btn-group">
+                    <div class="primary-btn" style="margin-right: 29px">确认</div>
+                    <div class="sub-btn modal-cancel">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--题目编辑模板-->
+    <div class="question-edit-template" style="display: none">
+        <!--普通选择题-->
+        <div id="question-select-edit">
+            <div class="edit-extra" style="display: none;">
+                <div class="edit-config">
+                    <div class="config-item">
+                        <div class="config-item-label">题目</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="title" maxlength="300"/>
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-item-label">说明</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="tips" maxlength="300"/>
+                        </div>
+                    </div>
+                    <div class="options-abs-config" style="display: none;">
+                        <div>正确答案</div>
+                    </div>
+                    <div class="config-options-box">
+                        <div class="config-item2">
+                            <input class="config-item-short-input" placeholder="选项1" value="选项"/>
+                            <div class="icon-remove"></div>
+                            <div class="config-radio-box" style="display: none;">
+                                <input type="radio" name="question1" checked/>
+                            </div>
+                            <div class="config-item-abs-drag" style="display: none;"></div>
+                        </div>
+                        <div class="config-item2">
+                            <input class="config-item-short-input" placeholder="选项2" value="选项"/>
+                            <div class="icon-remove"></div>
+                            <div class="config-radio-box" style="display: none;">
+                                <input type="radio" name="question1"/>
+                            </div>
+                            <div class="config-item-abs-drag" style="display: none;"></div>
+                        </div>
+                    </div>
+                    <div class="config-options-add">
+                        <div class="icon-add"></div>
+                        <span>选项</span>
+                    </div>
+                    <div class="config-options-else" style="display: none;">
+                        <span>其他</span>
+                        <div></div>
+                    </div>
+                    <div class="config-operate">
+                        <div class="operate-add-else">
+                            <div class="icon-add-light"></div>
+                            <span>【其他】选项</span>
+                        </div>
+                        <div class="operate-change">
+                            <span>批量修改</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-setting">
+                    <div class="edit-setting-title">基础设置</div>
+                    <div class="edit-setting-toggle" data-class="toggle-more" data-show="false">
+                        <span>更多设置</span>
+                        <div class="icon-toggle"></div>
+                    </div>
+                    <div class="setting-box" style="height: 50px;" data-height="50px">
+                        <div class="setting-left">
+                            <label class="setting-left-item">
+                                <input type="checkbox" name="necessary"/><span>必填</span></label>
+                            <label class="setting-left-item">
+                                <input type="checkbox"/><span>显示投票结果</span></label>
+                            <label class="setting-left-item">
+                                <input type="checkbox"/><span>设置为评测题目</span></label>
+                        </div>
+                        <div class="setting-right">
+                            <div class="setting-right-item">
+                                <span>每行显示</span>
+                                <div class="copy-select line-show" data-options="[1,2,3,4,5,6,7,8,9,10]">
+                                    <div class="copy-select-show">1</div>
+                                </div>
+                            </div>
+                            <div class="setting-right-item">
+                                <span>选项排序</span>
+                                <div class="copy-select" data-options='["原始排序","按投票次数升序","按投票次数倒序","随机排序"]'>
+                                    <div class="copy-select-show">原始排序</div>
+                                </div>
+                            </div>
+                            <div class="setting-right-item">
+                                <span>题目分值</span>
+                                <input/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-group">
+                    <div class="sub-btn">取消</div>
+                    <div class="primary-btn">确认</div>
+                </div>
+            </div>
+        </div>
+        <!--文本题目-->
+        <div id="question-text-edit">
+            <div class="edit-extra" style="display:none;">
+                <div class="edit-config">
+                    <div class="config-item">
+                        <div class="config-item-label">题目</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="title" maxlength="300"/>
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-item-label">说明</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="tips" maxlength="300"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-setting edit-setting2">
+                    <div class="edit-setting-title">基础设置</div>
+                    <div class="setting-box">
+                        <div class="setting-box-item">
+                            <label>
+                                <input type="checkbox" name="necessary"/><span>必填</span>
+                            </label>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>文本限制</span>
+                            <div class="copy-select line-show" data-options='["不限","日期","数字","电子邮箱","手机号码","公民身份号码"]'>
+                                <div class="copy-select-show">不限</div>
+                            </div>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>最少</span>
+                            <input/>
+                            <span>字</span>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>最多</span>
+                            <input/>
+                            <span>字</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-group">
+                    <div class="sub-btn">取消</div>
+                    <div class="primary-btn">确认</div>
+                </div>
+            </div>
+        </div>
+        <!--图片题目-->
+        <div id="question-image-edit">
+            <div class="edit-extra" style="display:none;">
+                <div class="edit-config">
+                    <div class="config-item">
+                        <div class="config-item-label">题目</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="title">
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-item-label">说明</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="tips">
+                        </div>
+                    </div>
+                    <div class="edit-image-box">
+                        <label class="show-image-item image-add">
+                            <img src="./asset/image/image_add.png">
+                            <div>
+                                <div>最多上传32张</div>
+                                <div><span>3</span>/32</div>
+                            </div>
+                            <input type="file" style="display: none;" multiple accept="image/x-png,image/gif,image/jpeg,image/bmp"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="edit-setting">
+                    <div class="edit-setting-title">基础设置</div>
+                    <div class="edit-setting-toggle" data-class="toggle-more" data-show="false">
+                        <span>更多设置</span>
+                        <div class="icon-toggle"></div>
+                    </div>
+                    <div class="setting-box" style="height: auto;" data-height="50px">
+                        <div class="setting-left" style="margin-right: 30px;">
+                            <label class="setting-left-item">
+                                <input type="checkbox" name="necessary"><span>必填</span>
+                            </label>
+                            <div class="setting-right-item setting-multiple" style="display: none">
+                                <span style="padding-left: 5px;">最少</span>
+                                <div class="copy-select" data-num="32" style="width: 100px;">
+                                    <div class="copy-select-show">不限</div>
+                                </div>
+                            </div>
+                            <label class="setting-left-item">
+                                <input type="checkbox"><span>显示投票结果</span>
+                            </label>
+                        </div>
+                        <div class="setting-right">
+                            <div class="setting-right-item">
+                                <div class="switch-box">
+                                    <div class="switch-item">多选</div>
+                                    <div class="switch-item switch-on">单选</div>
+                                </div>
+                            </div>
+                            <div class="setting-right-item setting-multiple" style="display: none">
+                                <span>最多</span>
+                                <div class="copy-select" data-num="32" style="width: 100px;">
+                                    <div class="copy-select-show">不限</div>
+                                </div>
+                            </div>
+                            <div class="setting-right-item">
+                                <span>选项排序</span>
+                                <div class="copy-select" data-options='["原始排序","按投票次数升序","按投票次数倒序","随机排序"]'>
+                                    <div class="copy-select-show">原始排序</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-group">
+                    <div class="sub-btn">取消</div>
+                    <div class="primary-btn">确认</div>
+                </div>
+            </div>
+        </div>
+        <!--打分题目-->
+        <div id="question-score-edit">
+            <div class="edit-extra" style="display:none;">
+                <div class="edit-config">
+                    <div class="config-item">
+                        <div class="config-item-label">题目</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="title">
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-item-label">说明</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="tips">
+                        </div>
+                    </div>
+                    <div class="edit-image-box">
+                        <div class="subject-score">
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                            <div class="star-box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-setting">
+                    <div class="edit-setting-title">基础设置</div>
+                    <div class="setting-box">
+                        <div class="setting-box-item">
+                            <label>
+                                <input type="checkbox" name="necessary"/><span>必填</span>
+                            </label>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>最低分</span>
+                            <div class="copy-select line-show" data-options='[1,2,3,4,5,6,7,8,9,10]'>
+                                <div class="copy-select-show">1</div>
+                            </div>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>最高分</span>
+                            <div class="copy-select line-show" data-options='[1,2,3,4,5,6,7,8,9,10]'>
+                                <div class="copy-select-show">1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-group">
+                    <div class="sub-btn">取消</div>
+                    <div class="primary-btn">确认</div>
+                </div>
+            </div>
+        </div>
+        <!--文件题目-->
+        <div id="question-file-edit">
+            <div class="edit-extra" style="display:none;">
+                <div class="edit-config">
+                    <div class="config-item">
+                        <div class="config-item-label">题目</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="title">
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-item-label">说明</div>
+                        <div class="config-item-input">
+                            <input placeholder="请输入" name="tips">
+                        </div>
+                    </div>
+                    <div class="edit-image-box">
+                        <div class="upload-box">
+                            <img src="asset/image/ico_y_add.png">
+                            <span>上传文件（最多上传2个文件，100M以内）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-setting">
+                    <div class="edit-setting-title">基础设置</div>
+                    <div class="setting-box">
+                        <div class="setting-box-item">
+                            <label>
+                                <input type="checkbox" name="necessary"/><span>必填</span>
+                            </label>
+                        </div>
+                        <div class="setting-box-item">
+                            <span>上传文件数</span>
+                            <div class="copy-select line-show" data-options='[1,2,3,4,5]' style="width: 210px;">
+                                <div class="copy-select-show">1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-group">
+                    <div class="sub-btn">取消</div>
+                    <div class="primary-btn">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--题目模板-->
+    <div class="question-template" style="display: none">
+        <div id="question-common-template">
+            <div class="edit-content-item-box">
+                <div class="edit-content-item">
+                    <div class="edit-show-box">
+                        <div class="show-box-title">
+                            <span>{{0}}、<span class="edit-item-title">{{1}}</span></span>
+                            <span class="edit-red">*</span>
+                        </div>
+                        <div class="show-box-msg" style="display: none;"></div>
+                        <div class="show-box-cont"></div>
+                    </div>
+                </div>
+                <div class="edit-toolbox">
+                    <div class="edit-toolbox-drag"></div>
+                    <div class="edit-toolbox-change"></div>
+                    <div class="edit-toolbox-del"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./asset/js/drag.js"></script>
+<script>
+$(function () {
+	/*全局状态*/
+	window.state = {
+		isEditing: false,
+		closeEdit: function () {
+			$('.is-edit').removeClass('is-edit');
+			this.isEditing = false;
+			initAllQuestion(array);
+		}
+	};
+
+	var array = window.array = [];
+	var container = window.container = $('.edit-container');
+
+	/*添加题目*/
+	$('.panel-cont .type-option').dblclick(function () {
+		if (state.isEditing) {
+			alert('有问题正在编辑，请先退出编辑状态');
+		} else {
+			var questionType = $(this).data('type');
+			$('.type-active').removeClass('type-active');
+			$(this).addClass('type-active');
+			array.push(window.getQuestion(questionType));
+			initAllQuestion(array);
+			startEditQuestion(array.length - 1);
+		}
+	});
+
+	window.startEditQuestion = function (index) {
+		index = index === undefined ? 0 : index;
+		var item = container.find('.edit-content-item-box').eq(index);
+		if (item.hasClass('is-edit')) {
+			return;
+		}
+		item.addClass('is-edit').addEditOperate(array, index);
+		window.state.isEditing = true;
+	}
+
+	/*初始化所有题目（包括修改）*/
+	window.initAllQuestion = function (array) {
+		container.html('');
+		var template = $.trim($('#question-common-template').html());
+		$.each(array, function (index, value) {
+			var copy = template;
+			copy = copy.replace(/{{\d+?}}/, index + 1).replace(/{{\d+?}}/, value.title || value.titlePlace);
+			var node = $(copy);
+			if (!value.necessary) {
+				node.find('.edit-red').hide();
+			}
+			if (!value.tips) {
+				node.find('.show-box-msg').hide();
+			} else {
+				node.find('.show-box-msg').show().html(value.tips);
+			}
+			var width;
+			switch (value.type) {
+				/*单选题*/
+				case 'singleSelect': {
+					width = calcWidth(value.lineEach);
+					$.each(value.options, function (i, option) {
+						var childNode = $('<div class="show-cont-item" style="width:' + width +
+							'"><div class="icon-single' +
+							(option.isCorrect ? ' icon-single-light' : '') +
+							'"></div><span>' + option.content +
+							'</span></div>');
+						node.find('.show-box-cont').append(childNode);
+					});
+					break;
+				}
+				/*多选题*/
+				case 'multipleSelect': {
+					width = calcWidth(value.lineEach);
+					$.each(value.options, function (i, option) {
+						var childNode = $('<div class="show-cont-item" style="width:' + width +
+							'"><div class="icon-multiple' +
+							(option.isCorrect ? ' icon-multiple-light' : '') +
+							'"></div><span>' + option.content +
+							'</span></div>');
+						node.find('.show-box-cont').append(childNode);
+					});
+					break;
+				}
+				/*单文本*/
+				case 'singleText': {
+					node.find('.show-box-cont').append($('<div class="single-input-box"></div>'));
+					break;
+				}
+				/*多文本*/
+				case 'multipleText': {
+					node.find('.show-box-cont').append($('<div class="multiple-input-box"></div>'));
+					break;
+				}
+				/*图片*/
+				case 'image': {
+					if (value.options) {
+						var html = '';
+						var isMultiple = !value.isSingle;
+						var iconClass = isMultiple ? 'icon-multiple' : 'icon-single';
+						var iconLight = isMultiple ? ' icon-multiple-light' : ' icon-single-light';
+						$.each(value.options, function (index, option) {
+							html += '<div class="show-image-item"><img src="' + option.source +
+								'"><div class="img-label"><div class="img-msg">' + option.label +
+								'</div><div class="img-label-abs"><div class="' + iconClass +
+								'' + (option.isCorrect ? iconLight : '') +
+								'"></div></div></div></div>';
+						});
+						node.find('.show-box-cont').html(html);
+					}
+					break;
+				}
+				/*打分*/
+				case 'score': {
+					var html = '<div class="subject-score">';
+					var max = Number(value.maxSize);
+					var min = Number(value.minSize);
+					var diff = max - min + 1;
+					for (var i = 0; i < diff; i++) {
+						var isLight = i < 1;
+						html += '<div class="star-box' +
+							(isLight ? ' star-light' : '') + '"></div>';
+					}
+					node.find('.show-box-cont').html(html += '</div>');
+					break;
+				}
+				/*附件*/
+				case 'file': {
+					node.find('.show-box-cont').html('<div class="upload-box"><img><span>上传文件（最多上传' +
+						value.maxSize + '个文件，100M以内）</span></div>');
+					break;
+				}
+
+			}
+			container.append(node);
+			// container.find('.edit-toolbox').show();
+		});
+		/*给题目添加拖拽功能*/
+		container.addDragEvent({
+			dashClass: '.edit-content-dash-box',
+			targetClass: '.edit-content-item-box',
+			dragClass: '.edit-toolbox-drag',
+			boxClass: '.edit-container'
+		}, function (start, end) {
+			if (start === end) {
+				return;
+			}
+			array.splice(end, 0, array.splice(start, 1)[0]);
+			initAllQuestion(array);
+		});
+		/*此处由编辑改成复制*/
+		container.find('.edit-toolbox-change').click(function () {
+			var index = $(this).parents('.edit-content-item-box').index();
+			var copy = $.extend(true, {}, array[index]);
+			array.splice(index + 1, 0, copy);
+			initAllQuestion(array);
+		});
+		container.find('.edit-toolbox-del').click(function () {
+			var index = $(this).parents('.edit-content-item-box').index();
+			array.splice(index, 1);
+			initAllQuestion(array);
+		});
+		container.find('.edit-content-item-box').dblclick(function () {
+			var index = $(this).index();
+			startEditQuestion(index);
+		});
+	}
+});
+
+$(function () {
+	/*初始化*/
+	function initPage() {
+		/*初次编辑*/
+		if (1) {
+			array.push(window.getQuestion('singleSelect'));
+			initAllQuestion(array);
+			startEditQuestion();
+		}
+		/*修改*/
+		else {
+			/*此处通过qjax获取问卷详情后修改数组再调用initAllQuestion方法*/
+			initAllQuestion(array);
+		}
+	}
+
+	/*提交*/
+	function submit() {
+		/*问题列表*/
+		var array = window.array;
+		/*此处调用提交接口*/
+	}
+
+	$('.main-float-btn-group .primary-btn').click(function () {
+		submit();
+	});
+	initPage();
+});
+</script>
